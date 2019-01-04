@@ -7,15 +7,14 @@ import ru.rzn.sbt.javaschool.basics.utils.StringSupplier;
 public class LethalWeapon {
 
     public String color;
-    private int roundsLeft;
+    private  int roundsLeft;
     private Double power;
+    private static long nextSerial=0;
+    private  final long serial=0;
 
-    public void reload (int spell){
-        roundsLeft=roundsLeft+spell;
-    }
-
+    public void reload (int spell){ this.roundsLeft=+spell; }
     public void pewPew (){
-        roundsLeft-=2;
+        this.roundsLeft-=2;
     }
 
 
@@ -27,5 +26,8 @@ public class LethalWeapon {
        this.power = power;
        this.roundsLeft = roundsLeft;
     }
+
+
+
 
 }

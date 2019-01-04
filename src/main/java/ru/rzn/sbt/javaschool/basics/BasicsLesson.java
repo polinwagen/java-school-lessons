@@ -62,11 +62,11 @@ public class BasicsLesson {
         while (x > 0) {
             if (x == 1) {
                 log.log(x + " little indian"); //https://habr.com/post/130195/   про логирование
-                x--;
+
             } else {
                 log.log(x + " little indians");
-                x--;
             }
+            x--;
         }
     }
 
@@ -82,7 +82,7 @@ public class BasicsLesson {
         String NewStr = null;
         boolean IsNext = supplier.hasNext();
 
-        while (IsNext == true) {
+        while (IsNext) {
             log.log(supplier.next());
             IsNext = supplier.hasNext();
         }
@@ -193,14 +193,9 @@ public class BasicsLesson {
 
             }
         }
-        for (int i = 0; i < words.length - 1; i++) {
-            if ((words[i].equals("") == false) && (words[i + 1].equals("") == false))  //сомнительная проверка конечно,но смысл в том ,что мы проверяем что вырезали пробелы именно между строк
-                space++;                                                             //проверям ,что соседний элемент не пустой,поскольку пустоты образуются походу ,если пробел был в вначале
-                                                                                    // не ну можно было проверять посимвольно ,но почему бы не сделать так)))))
-        }
-
-        firstletter = input.indexOf("R");
-        lastletter = input.lastIndexOf("L");
+                space= input.trim().length() - input.trim().replaceAll(" ", "").length();
+                firstletter = input.indexOf("R");
+                lastletter = input.lastIndexOf("L");
 
 
         result = length * comma * hyphen * firstletter * lastletter * space;
