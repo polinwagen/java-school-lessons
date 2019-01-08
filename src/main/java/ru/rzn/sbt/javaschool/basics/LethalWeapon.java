@@ -21,6 +21,9 @@ public class LethalWeapon {
     public LethalWeapon(){ };
 
 
+
+
+
     public LethalWeapon(String color, Double power, int roundsLeft){
        this.color = color;
        this.power = power;
